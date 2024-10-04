@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergy Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Allergy Detection and Recommendation System</h1>
+        <form action="/predict" method="POST">
+            <label for="symptoms">Enter Your Symptoms:</label>
+            <textarea name="symptoms" id="symptoms" placeholder="e.g., sneezing, coughing, watery eyes"></textarea>
+            <button type="submit">Check Allergy</button>
+        </form>
+        {% if prediction %}
+            <div class="result">
+                <h2>Prediction:</h2>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
